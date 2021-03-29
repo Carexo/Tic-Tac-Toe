@@ -27,7 +27,7 @@ header {
   width: 50rem;
   height: 12rem;
 
-  background: #c65102;
+  background: #d78437;
   border: solid 0.7rem #fff;
   border-radius: 2.5rem;
 
@@ -109,7 +109,9 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #a8c5ff;
+
+  color: #fff;
+  background: #39377c;
 }
 
 .score-x {
@@ -127,7 +129,7 @@ h2 {
   justify-content: center;
 
   color: #fff;
-  background: #bb2828;
+  background: #7b1616;
 }
 
 .board {
