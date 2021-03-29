@@ -100,7 +100,7 @@ h2 {
 
   background-color: #fff;
 
-  border-radius: 0 0 1rem 1rem;
+  border-radius: 0 0 2rem 2rem;
   height: 100%;
 }
 
@@ -161,7 +161,7 @@ h2 {
 .reset {
   height: 10rem;
   font-size: inherit;
-  font-weight: inherit;
+  font-weight: 700;
 
   background: #ff7373;
 
@@ -181,7 +181,7 @@ h2 {
 
 @media only screen and (max-width: 1220px) {
   header {
-    width: 40rem;
+    width: 30%;
   }
 
   h1 {
@@ -189,12 +189,12 @@ h2 {
   }
 
   .window {
-    font-size: 2.3rem;
     width: 20rem;
   }
 
   main {
     height: 50rem;
+    font-size: 2.3rem;
   }
 
   .board {
@@ -204,12 +204,89 @@ h2 {
 }
 
 @media only screen and (max-width: 920px) {
+  header {
+    width: 50%;
+  }
+
   main {
     flex-direction: column;
+    align-items: center;
+
+    justify-content: space-evenly;
+    height: 100%;
+  }
+
+  .information {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .score {
+    width: 40%;
+    min-width: 20rem;
+  }
+
+  .status-game {
+    width: 40%;
+    min-width: 19rem;
   }
 
   .board {
-    width: 100%;
+    margin: 5vh 0 5vh 0;
+    width: 90%;
     height: 90%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  header {
+    width: 75%;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  main {
+    font-size: 2rem;
+  }
+
+  .window {
+    border: solid 0.4rem #fff;
+    height: 7rem;
+  }
+
+  .score {
+    height: 12rem;
+  }
+
+  .score-table {
+    grid-gap: 0.2rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  .board {
+    grid-gap: 2rem;
+    padding: 2rem;
+  }
+  .reset {
+    width: 14rem;
+    height: 5rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .information {
+    flex-direction: column;
+    height: 24rem;
+  }
+
+  .board {
+    margin-top: 1vh;
   }
 }
