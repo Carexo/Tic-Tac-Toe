@@ -23,7 +23,7 @@ header {
   justify-content: center;
   align-items: center;
 
-  margin-top: 7vh;
+  margin-top: 5vh;
   width: 50rem;
   height: 12rem;
 
@@ -40,16 +40,23 @@ h1 {
 }
 
 main {
-  margin-top: 10vh;
+  margin-top: 8vh;
   display: flex;
 
-  justify-content: space-between;
+  justify-content: space-evenly;
 
   font-size: 3rem;
   font-weight: 500;
 
   height: 60rem;
-  width: 135rem;
+  width: 100%;
+}
+
+.window {
+  width: 30rem;
+
+  border: solid 0.7rem #fff;
+  border-radius: 3rem;
 }
 
 .information {
@@ -64,21 +71,16 @@ main {
   justify-content: center;
   align-items: center;
 
-  width: 30rem;
   height: 10rem;
 
   background: #54855b;
   color: #fff;
-
-  border: solid 0.7rem #fff;
-  border-radius: 3rem;
 }
 
 .score {
   display: flex;
   flex-direction: column;
 
-  width: 30rem;
   height: 20rem;
 
   background: #d1c7c7;
@@ -131,6 +133,7 @@ h2 {
 .board {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 
   grid-gap: 4rem;
   width: 60rem;
@@ -145,12 +148,17 @@ h2 {
 
 .field {
   background: #7eb5ab;
+  font-size: 0rem;
 
   cursor: pointer;
 }
 
+.field img {
+  width: 100%;
+  height: auto;
+}
+
 .reset {
-  width: 30rem;
   height: 10rem;
   font-size: inherit;
   font-weight: inherit;
@@ -169,4 +177,39 @@ h2 {
 .reset:hover {
   color: #fff;
   background-color: #8f4343;
+}
+
+@media only screen and (max-width: 1220px) {
+  header {
+    width: 40rem;
+  }
+
+  h1 {
+    font-size: 4.5rem;
+  }
+
+  .window {
+    font-size: 2.3rem;
+    width: 20rem;
+  }
+
+  main {
+    height: 50rem;
+  }
+
+  .board {
+    height: 50rem;
+    width: 50rem;
+  }
+}
+
+@media only screen and (max-width: 920px) {
+  main {
+    flex-direction: column;
+  }
+
+  .board {
+    width: 100%;
+    height: 90%;
+  }
 }

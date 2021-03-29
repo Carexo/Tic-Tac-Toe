@@ -8,12 +8,11 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <script src="script.js"></script>
     <header><h1>Tic Tac Toe</h1></header>
     <main>
       <section class="information">
-        <div class="status-game">X won the game</div>
-        <div class="score">
+        <div class="window status-game">X won the game</div>
+        <div class="window score">
           <h2>Score</h2>
           <div class="score-table">
             <div class="label-x">X</div>
@@ -25,21 +24,27 @@
       </section>
       <section class="board">
         <!-- first row -->
-        <div class="field" data-number="0"></div>
-        <div class="field" data-number="1"></div>
-        <div class="field" data-number="2"></div>
+        <div class="field" data-row="0" data-column="0">
+          <img src="img/circle.svg" />
+        </div>
+        <div class="field" data-row="0" data-column="1"></div>
+        <div class="field" data-row="0" data-column="2"></div>
         <!-- second row -->
-        <div class="field" data-number="3"></div>
-        <div class="field" data-number="4"></div>
-        <div class="field" data-number="5"></div>
+        <div class="field" data-row="1" data-column="0"></div>
+        <div class="field" data-row="1" data-column="1">
+          <img src="img/cross.svg" />
+        </div>
+        </div>
+        <div class="field" data-row="1" data-column="2"></div>
         <!-- second row -->
-        <div class="field" data-number="6"></div>
-        <div class="field" data-number="7"></div>
-        <div class="field" data-number="8"></div>
+        <div class="field" data-row="2" data-column="0"></div>
+        <div class="field" data-row="2" data-column="1"></div>
+        <div class="field" data-row="2" data-column="2"></div>
       </section>
       <section class="restart">
-        <button class="reset">RESET</button>
+        <button class="window reset">RESET</button>
       </section>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>
