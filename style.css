@@ -7,11 +7,13 @@
 
 html {
   font-size: 62.5%;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 
   background: #ffba76;
 }
@@ -29,11 +31,142 @@ header {
   border: solid 0.7rem #fff;
   border-radius: 2.5rem;
 
-  font-family: "Roboto", sans-serif;
   color: #fff;
   text-align: center;
 }
 
 h1 {
   font-size: 6rem;
+}
+
+main {
+  margin-top: 10vh;
+  display: flex;
+
+  justify-content: space-between;
+
+  font-size: 3rem;
+  font-weight: 500;
+
+  height: 60rem;
+  width: 135rem;
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-evenly;
+}
+
+.status-game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 30rem;
+  height: 10rem;
+
+  background: #54855b;
+  color: #fff;
+
+  border: solid 0.7rem #fff;
+  border-radius: 3rem;
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+
+  width: 30rem;
+  height: 20rem;
+
+  background: #d1c7c7;
+
+  border: solid 0.7rem #fff;
+  border-radius: 3rem;
+}
+
+h2 {
+  text-align: center;
+}
+
+.score-table {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0.5rem;
+
+  background-color: #fff;
+
+  border-radius: 0 0 1rem 1rem;
+  height: 100%;
+}
+
+.label-x,
+.score-x {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #a8c5ff;
+}
+
+.score-x {
+  border-radius: 0 0 0 2.5rem;
+}
+
+.score-o {
+  border-radius: 0 0 2.5rem 0;
+}
+
+.label-o,
+.score-o {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+  background: #bb2828;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  grid-gap: 4rem;
+  width: 60rem;
+  height: 60rem;
+  padding: 4rem;
+
+  background: #97d6ca;
+
+  border: solid 0.7rem #fff;
+  border-radius: 3rem;
+}
+
+.field {
+  background: #7eb5ab;
+
+  cursor: pointer;
+}
+
+.reset {
+  width: 30rem;
+  height: 10rem;
+  font-size: inherit;
+  font-weight: inherit;
+
+  background: #ff7373;
+
+  border: solid 0.7rem #fff;
+  border-radius: 3rem;
+
+  cursor: pointer;
+  outline: none;
+
+  transition: all 1;
+}
+
+.reset:hover {
+  color: #fff;
+  background-color: #8f4343;
 }

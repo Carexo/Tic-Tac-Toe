@@ -13,10 +13,33 @@
     <main>
       <section class="information">
         <div class="status-game">X won the game</div>
-        <div class="score"></div>
+        <div class="score">
+          <h2>Score</h2>
+          <div class="score-table">
+            <div class="label-x">X</div>
+            <div class="label-o">O</div>
+            <div class="score-x">5</div>
+            <div class="score-o">10</div>
+          </div>
+        </div>
       </section>
-      <section class="board"></section>
-      <section class="restart"></section>
+      <section class="board">
+        <!-- first row -->
+        <div class="field" data-number="0"></div>
+        <div class="field" data-number="1"></div>
+        <div class="field" data-number="2"></div>
+        <!-- second row -->
+        <div class="field" data-number="3"></div>
+        <div class="field" data-number="4"></div>
+        <div class="field" data-number="5"></div>
+        <!-- second row -->
+        <div class="field" data-number="6"></div>
+        <div class="field" data-number="7"></div>
+        <div class="field" data-number="8"></div>
+      </section>
+      <section class="restart">
+        <button class="reset">RESET</button>
+      </section>
     </main>
   </body>
 </html>
