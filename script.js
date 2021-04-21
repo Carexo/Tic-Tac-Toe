@@ -28,7 +28,7 @@ class Game {
 
     if (!field) return;
 
-    this.updateGameArray(field);
+    this.updateGame(field);
   }
 
   updateCurrentPlayer() {
@@ -43,25 +43,34 @@ class Game {
     ];
 
     this.gameArray[placeFieldRow][placeFieldColumn] = this.currentPlayer;
-
-    this.updateUserInteface(field);
-    this.updateCurrentPlayer();
-
-    console.log(this.gameArray);
   }
 
   updateUserInteface(field) {
+    const imageElement = `<img src="img/char-${this.currentPlayer}.svg" />`;
+    field.insertAdjacentHTML("afterbegin", imageElement);
+    setTimeout(function () {
+      field.childNodes[0].style.opacity = "1";
+    }, 1);
+  }
+
+  updateStatus() {
+    const status = `${this.currentPlayer.toUpperCase()} move`;
+    statusGameElement.textContent = status;
+  }
+
+  updateGame(field) {
     if (field.children[0]) return;
 
-    console.log(field);
-    const imageElement = `<img src="img/char-${this.currentPlayer}.svg" />`;
-    console.log(imageElement);
-    field.insertAdjacentHTML("afterbegin", imageElement);
+    this.updateGameArray(field);
+    this.updateUserInteface(field);
+    this.updateCurrentPlayer();
+    this.updateStatus();
   }
 
   resetGame() {
     this.newGameArray();
     this.currentPlayer = "x";
+    this.updateStatus();
     allFields.forEach((field) => (field.textContent = ""));
   }
 }
