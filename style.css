@@ -243,8 +243,8 @@ h2 {
 
   .board {
     margin: 5vh 0 5vh 0;
-    width: 90%;
-    height: 90%;
+    width: 90vw;
+    height: 90vw;
   }
 }
 
