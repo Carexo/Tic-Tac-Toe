@@ -122,18 +122,7 @@ class Game {
       if (countLeft === -3 || countRight === -3) return "o";
     };
 
-    const checkDraw = () => {
-      const flatGameArray = this.gameArray.flat();
-      const filtredGameArrayFromMoves = flatGameArray.filter(
-        (playerMove) => !playerMove
-      );
-
-      if (filtredGameArrayFromMoves.length === 0) {
-        return true;
-      }
-    };
-
-    if (checkDraw()) {
+    if (this.checkDraw()) {
       board.removeEventListener("click", this.clickHandler);
       this.updateStatus(`Draw`);
     }
@@ -142,23 +131,45 @@ class Game {
       board.removeEventListener("click", this.clickHandler);
       this.updateStatus(`X won`);
       this.updateScore("x");
+      this.displayScore();
     }
 
     if (checkColumn() === "o" || checkRow() === "o" || checkCross() === "o") {
       board.removeEventListener("click", this.clickHandler);
       this.updateStatus(`O won`);
       this.updateScore("o");
+      this.displayScore();
     }
+  }
+
+  checkDraw() {
+    const flatGameArray = this.gameArray.flat();
+    const filtredGameArrayFromMoves = flatGameArray.filter(
+      (playerMove) => !playerMove
+    );
+
+    if (filtredGameArrayFromMoves.length === 0) return true;
+
+    if (filtredGameArrayFromMoves.length === 9) return false;
   }
 
   updateScore(wonPlayer) {
     if (wonPlayer === "x") this.scoreX++;
     if (wonPlayer === "o") this.scoreO++;
+  }
+
+  displayScore() {
     scoreXElement.innerText = this.scoreX;
     scoreOElement.innerText = this.scoreO;
   }
 
   resetGame() {
+    if (this.checkDraw() === false) {
+      this.scoreO = 0;
+      this.scoreX = 0;
+      this.displayScore();
+    }
+
     this.newGameArray();
     this.currentPlayer = "x";
     this.updateStatus("X move");
