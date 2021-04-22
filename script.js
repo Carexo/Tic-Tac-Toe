@@ -11,7 +11,10 @@ class Game {
   constructor() {
     this.currentPlayer = "x";
     this.newGameArray();
-    board.addEventListener("click", this.handlePlayerMove.bind(this));
+
+    this.clickHandler = this.handlePlayerMove.bind(this);
+
+    board.addEventListener("click", this.clickHandler);
     resetButton.addEventListener("click", this.resetGame.bind(this));
   }
 
@@ -72,14 +75,6 @@ class Game {
     this.checkStatus();
   }
 
-  updateStatusWin(player) {
-    if (!player) return;
-    const status = `${player.toUpperCase()} won`;
-    statusGameElement.textContent = status;
-
-    board.removeEventListener("click", this.handlePlayerMove);
-  }
-
   checkStatus() {
     const checkRow = () => {
       for (const row of this.gameArray) {
@@ -138,16 +133,19 @@ class Game {
     };
 
     if (checkDraw()) {
+      board.removeEventListener("click", this.clickHandler);
       this.updateStatus(`Draw`);
       return;
     }
 
     if (checkColumn() === "x" || checkRow() === "x" || checkCross() === "x") {
+      board.removeEventListener("click", this.clickHandler);
       this.updateStatus(`X won`);
       return;
     }
 
     if (checkColumn() === "o" || checkRow() === "o" || checkCross() === "o") {
+      board.removeEventListener("click", this.clickHandler);
       this.updateStatus(`O won`);
       return;
     }
@@ -158,6 +156,8 @@ class Game {
     this.currentPlayer = "x";
     this.updateStatus("X move");
     allFields.forEach((field) => (field.textContent = ""));
+
+    board.addEventListener("click", this.clickHandler);
   }
 }
 
