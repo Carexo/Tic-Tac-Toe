@@ -169,6 +169,12 @@ h2 {
   transition: all 300ms;
 }
 
+.restart p {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
 .reset {
   height: 6rem;
   font-size: 2.5rem;
@@ -250,6 +256,17 @@ h2 {
     width: 90vw;
     height: 90vw;
   }
+
+  .restart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .reset {
+    width: 30%;
+  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -288,6 +305,11 @@ h2 {
     grid-gap: 2.5rem;
     padding: 2rem;
   }
+
+  .restart p {
+    font-size: 1.1rem;
+  }
+
   .reset {
     width: 14rem;
     height: 5rem;
@@ -306,5 +328,9 @@ h2 {
 
   .board {
     margin-top: 1vh;
+  }
+
+  .restart p {
+    font-size: 1rem;
   }
 }
