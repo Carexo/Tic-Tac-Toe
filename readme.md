@@ -26,7 +26,7 @@ The **board** is the main element of the game. You do moves there.
 
 ![The board](/readmeFileImages/board.png)
 
-### **Board**
+### **Reset button**
 
 The **reset button** allows to reset the current game and the score window when board is clear
 
