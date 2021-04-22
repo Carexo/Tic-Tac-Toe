@@ -99,13 +99,14 @@ h2 {
 }
 
 .score-table {
+  font-size: 4rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 0.5rem;
 
   background-color: #f9ecf6;
 
-  border-radius: 0 0 2rem 2rem;
+  border-radius: 0 0 2.2rem 2.2rem;
   height: 100%;
   font-weight: 900;
 }
@@ -271,10 +272,11 @@ h2 {
   }
 
   .score {
-    height: 12rem;
+    height: 14rem;
   }
 
   .score-table {
+    font-size: 2.7rem;
     grid-gap: 0.2rem;
   }
 

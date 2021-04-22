@@ -11,9 +11,10 @@ class Game {
   constructor() {
     this.currentPlayer = "x";
     this.newGameArray();
+    this.scoreX = 0;
+    this.scoreO = 0;
 
     this.clickHandler = this.handlePlayerMove.bind(this);
-
     board.addEventListener("click", this.clickHandler);
     resetButton.addEventListener("click", this.resetGame.bind(this));
   }
@@ -135,20 +136,26 @@ class Game {
     if (checkDraw()) {
       board.removeEventListener("click", this.clickHandler);
       this.updateStatus(`Draw`);
-      return;
     }
 
     if (checkColumn() === "x" || checkRow() === "x" || checkCross() === "x") {
       board.removeEventListener("click", this.clickHandler);
       this.updateStatus(`X won`);
-      return;
+      this.updateScore("x");
     }
 
     if (checkColumn() === "o" || checkRow() === "o" || checkCross() === "o") {
       board.removeEventListener("click", this.clickHandler);
       this.updateStatus(`O won`);
-      return;
+      this.updateScore("o");
     }
+  }
+
+  updateScore(wonPlayer) {
+    if (wonPlayer === "x") this.scoreX++;
+    if (wonPlayer === "o") this.scoreO++;
+    scoreXElement.innerText = this.scoreX;
+    scoreOElement.innerText = this.scoreO;
   }
 
   resetGame() {
